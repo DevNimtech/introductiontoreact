@@ -1,6 +1,5 @@
 export default function Home() {
-  function ListItems() {
-    const ints = [1,2,3,4];
+  function ListItems({ints}) {
     return (
       <>
         {
@@ -12,9 +11,10 @@ export default function Home() {
     );
   }
 
+  const ints = [1,2,3,4];
   return (
     <ul>
-      <ListItems></ListItems>
+      <ListItems ints={ints}></ListItems>
     </ul>
   )
 }
