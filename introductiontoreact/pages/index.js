@@ -2,9 +2,10 @@ import { useState } from "react";
 
 export default function Home() {
   function ListItems({ints, addValue}) {
+    const increment = 2;
     return (
       <>
-        <button onClick={addValue}>Add value</button>
+        <button onClick={() => addValue(increment)}>Add value</button>
         {
           ints.map(id =>
             <li key={id}>{id}</li>
@@ -15,8 +16,8 @@ export default function Home() {
   }
 
   const [ints, setInts] = useState([1,2,3,4]);
-  function addValue(){
-    const newVal = Math.max(...ints) + 1;
+  function addValue(incrementValue){
+    const newVal = Math.max(...ints) + incrementValue;
     setInts([...ints, newVal]);
   }
 
