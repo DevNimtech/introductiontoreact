@@ -1,4 +1,4 @@
-import reactImg from './assets/react-core-concepts.png';
+import reactImg from '../assets/react-core-concepts.png';
 
 const options = ['Fundamental','Crucial','Core'];
     function getRangomInt(max){
