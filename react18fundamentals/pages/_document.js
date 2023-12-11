@@ -9,7 +9,7 @@ export default function Document() {
       </Head>
       <body>
         <div className='container'>
-        <Main />
+          <Main />
         </div>
         <NextScript />
       </body>
