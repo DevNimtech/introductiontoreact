@@ -2,6 +2,7 @@ import { CoreConcept } from "./components/CoreConcept";
 import { CORE_CONCEPTS } from "./data";
 import componentsImg from "./assets/components.png";
 import Header from "./components/Header";
+import TabButton from "./components/TabButton";
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[2] }></CoreConcept>
             <CoreConcept {...CORE_CONCEPTS[3] }></CoreConcept>
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+          </menu>
         </section>
       </main>
     </div>
