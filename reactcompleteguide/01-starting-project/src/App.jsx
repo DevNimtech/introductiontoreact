@@ -1,13 +1,20 @@
 import { CoreConcept } from "./components/CoreConcept";
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
+import { useState } from "react";
 import componentsImg from "./assets/components.png";
 import Header from "./components/Header";
 import TabButton from "./components/TabButton";
 
+
 function App() {
+  const [selectedTopic, setSelectedTopic ] = useState('components');
+
   function handleSelect(selectedButton) {
     console.log(selectedButton);
-}
+    setSelectedTopic(selectedButton);
+  }
+  
+  console.log('App Component Executing.');
 
   return (
     <div>
@@ -21,9 +28,9 @@ function App() {
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             ></CoreConcept>
-            <CoreConcept {...CORE_CONCEPTS[1] }></CoreConcept>
-            <CoreConcept {...CORE_CONCEPTS[2] }></CoreConcept>
-            <CoreConcept {...CORE_CONCEPTS[3] }></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[1]}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[2]}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept>
           </ul>
         </section>
         <section id="examples">
@@ -34,6 +41,15 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[selectedTopic].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
